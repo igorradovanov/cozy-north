@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cozy North — CSS Framework</title>
+    <link rel="stylesheet" href="assets/cozy-north.css" />
+    <style>
+      /* ============================================
+         DEMO PAGE STYLES (not part of framework)
+         ============================================ */
+      .demo-page {
+        padding-bottom: var(--cozy-space-3xl);
+      }
+      .demo-hero {
+        text-align: center;
+        padding: var(--cozy-space-3xl) var(--cozy-space-lg);
+        background: linear-gradient(
+          180deg,
+          var(--cozy-bg-warm) 0%,
+          var(--cozy-bg) 100%
+        );
+        border-bottom: 1px solid var(--cozy-border-soft);
+      }
+      .demo-hero h1 {
+        font-size: 2.75rem;
+        letter-spacing: -0.03em;
+        margin-bottom: var(--cozy-space-sm);
+      }
+      .demo-hero .subtitle {
+        color: var(--cozy-text-muted);
+        font-size: var(--cozy-text-lg);
+        max-width: 520px;
+        margin: 0 auto var(--cozy-space-lg);
+      }
+      .demo-section {
+        padding: var(--cozy-space-2xl) 0;
+        border-bottom: 1px solid var(--cozy-border-soft);
+      }
+      .demo-section:last-child {
+        border-bottom: none;
+      }
+      .demo-section h2 {
+        color: var(--cozy-text-muted);
+        font-size: var(--cozy-text-sm);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        font-weight: 500;
+        margin-bottom: var(--cozy-space-lg);
+      }
+      .demo-subsection {
+        margin-bottom: var(--cozy-space-xl);
+      }
+      .demo-subsection h3 {
+        font-size: var(--cozy-text-md);
+        color: var(--cozy-text-soft);
+        font-weight: 500;
+        margin-bottom: var(--cozy-space-sm);
+      }
+      .color-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: var(--cozy-space-sm);
+      }
+      .color-swatch {
+        aspect-ratio: 1.2;
+        border-radius: var(--cozy-radius);
+        border: 1px solid var(--cozy-border-soft);
+        display: flex;
+        align-items: flex-end;
+        padding: var(--cozy-space-sm);
+      }
+      .color-swatch span {
+        font-size: 10px;
+        font-family: var(--cozy-font-mono);
+        opacity: 0.8;
+      }
+      .type-specimen {
+        padding: var(--cozy-space-lg) 0;
+      }
+      .demo-mini-nav {
+        display: flex;
+        gap: 2px;
+        background: var(--cozy-bg-warm);
+        border-radius: var(--cozy-radius);
+        padding: 3px;
+        width: fit-content;
+      }
+      .demo-mini-nav button {
+        padding: 7px 16px;
+        border: none;
+        background: transparent;
+        border-radius: var(--cozy-radius-sm);
+        font-family: var(--cozy-font);
+        font-size: var(--cozy-text-sm);
+        color: var(--cozy-text-soft);
+        cursor: pointer;
+        transition: all var(--cozy-duration) var(--cozy-ease);
+      }
+      .demo-mini-nav button.active {
+        background: var(--cozy-bg-card);
+        box-shadow: var(--cozy-shadow-sm);
+        color: var(--cozy-text);
+      }
+      .demo-mini-nav button:hover:not(.active) {
+        color: var(--cozy-text);
+      }
+      .demo-mock-chat {
+        max-width: 480px;
+      }
+      .demo-card-layout {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: var(--cozy-space-md);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="demo-page">
+      <!-- Hero -->
+      <div class="demo-hero">
+        <h1>Cozy North</h1>
+        <p class="subtitle">
+          A warm, minimalistic CSS framework inspired by Scandinavian design and
+          readable typography.
+        </p>
+        <div
+          class="row"
+          style="justify-content: center; gap: var(--cozy-space-sm)"
+        >
+          <button class="btn btn-primary btn-lg btn-pill">Get Started</button>
+          <button class="btn btn-secondary btn-lg btn-pill">
+            Documentation
+          </button>
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- Colors -->
+        <div class="demo-section">
+          <h2>Color Palette</h2>
+          <div class="color-grid">
+            <div class="color-swatch" style="background: var(--cozy-bg)">
+              <span style="color: var(--cozy-text-muted)">#faf6f1</span>
+            </div>
+            <div class="color-swatch" style="background: var(--cozy-bg-warm)">
+              <span style="color: var(--cozy-text-muted)">#f5efe6</span>
+            </div>
+            <div
+              class="color-swatch"
+              style="background: var(--cozy-orange-pale)"
+            >
+              <span style="color: var(--cozy-rust)">#f2dcc8</span>
+            </div>
+            <div
+              class="color-swatch"
+              style="background: var(--cozy-orange-soft)"
+            >
+              <span style="color: #fff">#d4915f</span>
+            </div>
+            <div class="color-swatch" style="background: var(--cozy-orange)">
+              <span style="color: #fff">#c4703f</span>
+            </div>
+            <div class="color-swatch" style="background: var(--cozy-rust)">
+              <span style="color: #fff">#a0522d</span>
+            </div>
+            <div class="color-swatch" style="background: var(--cozy-text-soft)">
+              <span style="color: #fff">#6b5d50</span>
+            </div>
+            <div class="color-swatch" style="background: var(--cozy-text)">
+              <span style="color: #fff">#3d3229</span>
+            </div>
+          </div>
+          <div style="margin-top: var(--cozy-space-lg)">
+            <h3
+              style="
+                font-size: var(--cozy-text-md);
+                color: var(--cozy-text-soft);
+                font-weight: 500;
+                margin-bottom: var(--cozy-space-sm);
+              "
+            >
+              Semantic Colors
+            </h3>
+            <div class="row" style="gap: var(--cozy-space-sm); flex-wrap: wrap">
+              <span class="badge badge-success">Success</span>
+              <span class="badge badge-warning">Warning</span>
+              <span class="badge badge-error">Error</span>
+              <span class="badge badge-info">Info</span>
+              <span class="badge badge-orange">Accent</span>
+              <span class="badge">Default</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Typography -->
+        <div class="demo-section">
+          <h2>Typography</h2>
+          <div class="type-specimen">
+            <h1>The quick brown fox</h1>
+            <h3>Warm, readable, and comfortable to scan</h3>
+            <p
+              style="
+                font-size: var(--cozy-text-lg);
+                color: var(--cozy-text-soft);
+                max-width: 54ch;
+              "
+            >
+              Good typography shouldn't make you think. It should feel like
+              settling into your favorite chair with a warm drink, where the
+              words simply flow and your eyes never strain.
+            </p>
+            <p class="text-muted" style="margin-top: var(--cozy-space-sm)">
+              Body text is optimized at 15px with a 1.65 line-height for maximum
+              comfort. The max-width of 68ch keeps lines from getting too long
+              to track comfortably.
+            </p>
+          </div>
+          <div class="demo-subsection" style="margin-top: var(--cozy-space-md)">
+            <blockquote>
+              "Simplicity is the ultimate sophistication." — good design is
+              invisible, letting content breathe naturally.
+            </blockquote>
+            <p>
+              Inline <code>code looks like this</code>, and works naturally
+              within sentences. Here's a <kbd>Ctrl+S</kbd> keyboard shortcut
+              too.
+            </p>
+          </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="demo-section">
+          <h2>Buttons</h2>
+          <div class="demo-subsection">
+            <div class="row" style="gap: var(--cozy-space-sm); flex-wrap: wrap">
+              <button class="btn btn-primary">Primary</button>
+              <button class="btn btn-secondary">Secondary</button>
+              <button class="btn btn-warm">Warm</button>
+              <button class="btn btn-ghost">Ghost</button>
+              <button class="btn btn-primary" disabled>Disabled</button>
+            </div>
+          </div>
+          <div class="demo-subsection">
+            <h3>Sizes & Shapes</h3>
+            <div class="row" style="gap: var(--cozy-space-sm); flex-wrap: wrap">
+              <button class="btn btn-primary btn-sm">Small</button>
+              <button class="btn btn-primary">Default</button>
+              <button class="btn btn-primary btn-lg">Large</button>
+              <button class="btn btn-primary btn-pill">Pill Shape</button>
+              <button class="btn btn-secondary btn-pill btn-sm">
+                Pill Small
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Forms -->
+        <div class="demo-section">
+          <h2>Forms & Inputs</h2>
+          <div style="max-width: 420px">
+            <div class="input-group">
+              <label class="label">Full Name</label>
+              <input
+                class="input"
+                type="text"
+                placeholder="Enter your name..."
+              />
+            </div>
+            <div class="input-group">
+              <label class="label">Email Address</label>
+              <input class="input" type="email" placeholder="you@example.com" />
+            </div>
+            <div class="input-group">
+              <label class="label">Message</label>
+              <textarea
+                class="textarea"
+                placeholder="What's on your mind..."
+              ></textarea>
+            </div>
+            <div class="input-group">
+              <label class="label">Category</label>
+              <select class="select">
+                <option>Choose an option...</option>
+                <option>Design</option>
+                <option>Development</option>
+                <option>Documentation</option>
+              </select>
+            </div>
+            <div
+              class="row"
+              style="
+                gap: var(--cozy-space-lg);
+                margin-bottom: var(--cozy-space-md);
+              "
+            >
+              <label
+                class="row"
+                style="
+                  gap: var(--cozy-space-sm);
+                  cursor: pointer;
+                  font-size: var(--cozy-text-sm);
+                "
+              >
+                <input type="checkbox" class="checkbox" checked /> Dark mode
+              </label>
+              <label
+                class="row"
+                style="
+                  gap: var(--cozy-space-sm);
+                  cursor: pointer;
+                  font-size: var(--cozy-text-sm);
+                "
+              >
+                <input type="checkbox" class="toggle" checked /> Notifications
+              </label>
+            </div>
+            <button class="btn btn-primary btn-block">Submit</button>
+          </div>
+        </div>
+
+        <!-- Segmented Control / Tab Nav -->
+        <div class="demo-section">
+          <h2>Navigation Patterns</h2>
+          <div class="demo-subsection">
+            <h3>Segmented Control</h3>
+            <div class="demo-mini-nav">
+              <button class="active">All</button>
+              <button>Active</button>
+              <button>Completed</button>
+              <button>Archived</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cards -->
+        <div class="demo-section">
+          <h2>Cards</h2>
+          <div class="demo-card-layout">
+            <div class="card card-interactive">
+              <h4>Getting Started</h4>
+              <p class="text-soft" style="font-size: var(--cozy-text-sm)">
+                Drop in the CSS file and start using the class names. No build
+                step, no JavaScript required.
+              </p>
+              <span
+                class="badge badge-orange"
+                style="margin-top: var(--cozy-space-sm)"
+                >Quick Start</span
+              >
+            </div>
+            <div class="card card-warm card-interactive">
+              <h4>Warm Card</h4>
+              <p class="text-soft" style="font-size: var(--cozy-text-sm)">
+                A slightly elevated variant with warmer tones, perfect for
+                highlighted or featured content.
+              </p>
+              <div class="progress" style="margin-top: var(--cozy-space-md)">
+                <div class="progress-bar" style="width: 65%"></div>
+              </div>
+              <small
+                class="text-muted"
+                style="margin-top: var(--cozy-space-xs); display: block"
+                >65% complete</small
+              >
+            </div>
+            <div class="card card-flat">
+              <h4>Flat Card</h4>
+              <p class="text-soft" style="font-size: var(--cozy-text-sm)">
+                For content that needs to blend more subtly into the background,
+                with no shadow and muted styling.
+              </p>
+              <div
+                class="row"
+                style="
+                  gap: var(--cozy-space-sm);
+                  margin-top: var(--cozy-space-sm);
+                "
+              >
+                <div class="avatar avatar-sm">A</div>
+                <div
+                  class="avatar avatar-sm"
+                  style="
+                    background: var(--cozy-info-bg);
+                    color: var(--cozy-info);
+                  "
+                >
+                  B
+                </div>
+                <div
+                  class="avatar avatar-sm"
+                  style="
+                    background: var(--cozy-success-bg);
+                    color: var(--cozy-success);
+                  "
+                >
+                  C
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Alerts -->
+        <div class="demo-section">
+          <h2>Alerts</h2>
+          <div class="stack-sm" style="max-width: 520px">
+            <div class="alert alert-info">
+              This is an informational message. Something useful to know about.
+            </div>
+            <div class="alert alert-success">
+              Changes saved successfully. Your settings have been updated.
+            </div>
+            <div class="alert alert-warning">
+              Your session will expire in 5 minutes. Please save your work.
+            </div>
+            <div class="alert alert-error">
+              Unable to connect to the server. Please check your connection.
+            </div>
+          </div>
+        </div>
+
+        <!-- Table -->
+        <div class="demo-section">
+          <h2>Table</h2>
+          <div style="overflow-x: auto">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Role</th>
+                  <th>Status</th>
+                  <th style="text-align: right">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="row" style="gap: var(--cozy-space-sm)">
+                      <div class="avatar avatar-sm">E</div>
+                      Emma Wilson
+                    </div>
+                  </td>
+                  <td class="text-soft">Designer</td>
+                  <td><span class="badge badge-success">Active</span></td>
+                  <td style="text-align: right">
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="row" style="gap: var(--cozy-space-sm)">
+                      <div
+                        class="avatar avatar-sm"
+                        style="
+                          background: var(--cozy-info-bg);
+                          color: var(--cozy-info);
+                        "
+                      >
+                        J
+                      </div>
+                      James Park
+                    </div>
+                  </td>
+                  <td class="text-soft">Developer</td>
+                  <td><span class="badge badge-warning">Away</span></td>
+                  <td style="text-align: right">
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="row" style="gap: var(--cozy-space-sm)">
+                      <div
+                        class="avatar avatar-sm"
+                        style="
+                          background: var(--cozy-success-bg);
+                          color: var(--cozy-success);
+                        "
+                      >
+                        S
+                      </div>
+                      Sofia Rivera
+                    </div>
+                  </td>
+                  <td class="text-soft">PM</td>
+                  <td><span class="badge badge-success">Active</span></td>
+                  <td style="text-align: right">
+                    <button class="btn btn-ghost btn-sm">Edit</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Chat Bubbles -->
+        <div class="demo-section">
+          <h2>Chat Pattern</h2>
+          <div class="demo-mock-chat">
+            <div class="chat-bubble chat-bubble-user">
+              Can you help me pick a color palette?
+            </div>
+            <div class="chat-bubble chat-bubble-assistant">
+              Of course! What kind of mood are you going for? Something warm and
+              cozy, or more cool and minimal?
+            </div>
+            <div class="chat-bubble chat-bubble-user">
+              Warm and cozy, exactly like this framework
+            </div>
+          </div>
+        </div>
+
+        <!-- Loading States -->
+        <div class="demo-section">
+          <h2>Loading States</h2>
+          <div class="card" style="max-width: 360px">
+            <div
+              class="row"
+              style="
+                gap: var(--cozy-space-sm);
+                margin-bottom: var(--cozy-space-md);
+              "
+            >
+              <div
+                class="skeleton"
+                style="
+                  width: 40px;
+                  height: 40px;
+                  border-radius: var(--cozy-radius-full);
+                "
+              ></div>
+              <div class="stack-sm" style="flex: 1">
+                <div class="skeleton" style="height: 14px; width: 60%"></div>
+                <div class="skeleton" style="height: 10px; width: 40%"></div>
+              </div>
+            </div>
+            <div class="stack-sm">
+              <div class="skeleton" style="height: 12px; width: 100%"></div>
+              <div class="skeleton" style="height: 12px; width: 90%"></div>
+              <div class="skeleton" style="height: 12px; width: 75%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div
+          style="
+            text-align: center;
+            padding: var(--cozy-space-2xl) 0 var(--cozy-space-lg);
+            color: var(--cozy-text-muted);
+            font-size: var(--cozy-text-sm);
+          "
+        >
+          <p style="margin-inline: auto">Cozy North CSS Framework v1.0.0</p>
+          <p
+            style="
+              font-size: var(--cozy-text-xs);
+              margin-top: var(--cozy-space-xs);
+              margin-inline: auto;
+            "
+          >
+            Warm design for comfortable interfaces
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

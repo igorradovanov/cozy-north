@@ -1,0 +1,131 @@
+/* ============================================
+   Cozy North — Typography
+   ============================================ */
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--cozy-font);
+  font-size: var(--cozy-text-base);
+  line-height: var(--cozy-leading);
+  color: var(--cozy-text);
+  background-color: var(--cozy-bg);
+  letter-spacing: -0.006em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--cozy-text);
+  line-height: var(--cozy-leading-tight);
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: var(--cozy-text-4xl);
+  margin-bottom: var(--cozy-space-lg);
+}
+h2 {
+  font-size: var(--cozy-text-3xl);
+  margin-bottom: var(--cozy-space-md);
+}
+h3 {
+  font-size: var(--cozy-text-2xl);
+  margin-bottom: var(--cozy-space-md);
+}
+h4 {
+  font-size: var(--cozy-text-xl);
+  margin-bottom: var(--cozy-space-sm);
+}
+h5 {
+  font-size: var(--cozy-text-lg);
+  margin-bottom: var(--cozy-space-sm);
+}
+h6 {
+  font-size: var(--cozy-text-md);
+  margin-bottom: var(--cozy-space-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--cozy-text-soft);
+  font-weight: 500;
+}
+
+p {
+  margin-bottom: var(--cozy-space-md);
+  max-width: 68ch;
+}
+
+a {
+  color: var(--cozy-orange);
+  text-decoration: none;
+  text-underline-offset: 2px;
+  transition: color var(--cozy-duration) var(--cozy-ease);
+}
+a:hover {
+  color: var(--cozy-rust);
+  text-decoration: underline;
+}
+
+small,
+.text-sm {
+  font-size: var(--cozy-text-sm);
+}
+.text-muted {
+  color: var(--cozy-text-muted);
+}
+.text-soft {
+  color: var(--cozy-text-soft);
+}
+.text-serif {
+  font-family: var(--cozy-font-serif);
+}
+
+code,
+kbd {
+  font-family: var(--cozy-font-mono);
+  font-size: 0.875em;
+  background: var(--cozy-bg-warm);
+  padding: 2px 6px;
+  border-radius: var(--cozy-radius-sm);
+  border: 1px solid var(--cozy-border-soft);
+}
+
+pre {
+  background: var(--cozy-bg-warm);
+  border: 1px solid var(--cozy-border-soft);
+  border-radius: var(--cozy-radius);
+  padding: var(--cozy-space-md);
+  overflow-x: auto;
+  margin-bottom: var(--cozy-space-md);
+}
+pre code {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+blockquote {
+  border-left: 3px solid var(--cozy-orange-pale);
+  padding: var(--cozy-space-sm) var(--cozy-space-md);
+  margin-bottom: var(--cozy-space-md);
+  color: var(--cozy-text-soft);
+  font-style: italic;
+  background: var(--cozy-orange-glow);
+  border-radius: 0 var(--cozy-radius-sm) var(--cozy-radius-sm) 0;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: var(--cozy-border);
+  margin: var(--cozy-space-xl) 0;
+}

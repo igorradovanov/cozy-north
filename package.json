@@ -1,0 +1,38 @@
+{
+  "name": "cozy-north",
+  "version": "1.0.0",
+  "description": "A warm, Scandinavian-inspired CSS framework for comfortable interfaces",
+  "main": "dist/cozy-north.min.css",
+  "style": "dist/cozy-north.min.css",
+  "files": [
+    "dist/",
+    "src/",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "bash build.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/igorradovanov/cozy-north.git"
+  },
+  "keywords": [
+    "css",
+    "framework",
+    "design-system",
+    "scandinavian",
+    "minimal",
+    "warm",
+    "ui",
+    "components",
+    "classless",
+    "lightweight"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/igorradovanov/cozy-north/issues"
+  },
+  "homepage": "https://github.com/igorradovanov/cozy-north#readme"
+}

@@ -1,0 +1,17 @@
+/* ============================================
+   Cozy North — Stack
+   ============================================ */
+
+.stack {
+  display: flex;
+  flex-direction: column;
+}
+.stack > * + * {
+  margin-top: var(--cozy-space-md);
+}
+.stack-sm > * + * {
+  margin-top: var(--cozy-space-sm);
+}
+.stack-lg > * + * {
+  margin-top: var(--cozy-space-lg);
+}

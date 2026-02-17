@@ -1,0 +1,27 @@
+/* ============================================
+   Cozy North — Tooltip
+   ============================================ */
+
+.tooltip {
+  position: relative;
+}
+.tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--cozy-text);
+  color: var(--cozy-bg);
+  font-size: var(--cozy-text-xs);
+  padding: 5px 10px;
+  border-radius: var(--cozy-radius-sm);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--cozy-duration) var(--cozy-ease);
+}
+.tooltip:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}

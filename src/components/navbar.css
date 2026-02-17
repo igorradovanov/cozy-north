@@ -1,0 +1,46 @@
+/* ============================================
+   Cozy North — Navbar
+   ============================================ */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--cozy-space-sm) var(--cozy-space-lg);
+  background: rgba(250, 246, 241, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--cozy-border-soft);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.navbar-brand {
+  font-weight: 600;
+  font-size: var(--cozy-text-lg);
+  color: var(--cozy-text);
+  letter-spacing: -0.02em;
+}
+.navbar-links {
+  display: flex;
+  gap: var(--cozy-space-xs);
+  list-style: none;
+}
+.navbar-links a {
+  display: block;
+  padding: 7px 14px;
+  color: var(--cozy-text-soft);
+  border-radius: var(--cozy-radius-sm);
+  font-size: var(--cozy-text-sm);
+  font-weight: 450;
+  text-decoration: none;
+  transition: all var(--cozy-duration) var(--cozy-ease);
+}
+.navbar-links a:hover {
+  background: var(--cozy-bg-hover);
+  color: var(--cozy-text);
+}
+.navbar-links a.active {
+  background: var(--cozy-orange-glow);
+  color: var(--cozy-orange);
+}

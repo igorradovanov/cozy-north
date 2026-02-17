@@ -1,0 +1,980 @@
+/*!
+ * Cozy North CSS Framework v1.0.0
+ * A warm, Scandinavian-inspired design system
+ * https://github.com/user/cozy-north
+ * Licensed under MIT
+ */
+
+/* ============================================
+   Cozy North — Reset & Base
+   ============================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================
+   Cozy North — Design Tokens
+   ============================================ */
+
+:root {
+  /* Core Palette - Warm Sepia & Orange */
+  --cozy-bg: #faf6f1;
+  --cozy-bg-warm: #f5efe6;
+  --cozy-bg-card: #ffffff;
+  --cozy-bg-elevated: #fffcf8;
+  --cozy-bg-hover: #f0e8db;
+  --cozy-bg-active: #ebe1d1;
+  --cozy-bg-input: #fffdf9;
+
+  /* Accent Colors */
+  --cozy-orange: #c4703f;
+  --cozy-orange-soft: #d4915f;
+  --cozy-orange-pale: #f2dcc8;
+  --cozy-orange-glow: rgba(196, 112, 63, 0.08);
+  --cozy-amber: #b8860b;
+  --cozy-rust: #a0522d;
+
+  /* Text Hierarchy */
+  --cozy-text: #3d3229;
+  --cozy-text-soft: #6b5d50;
+  --cozy-text-muted: #9a8b7a;
+  --cozy-text-faint: #bfb3a4;
+
+  /* Borders & Lines */
+  --cozy-border: #e5ddd1;
+  --cozy-border-soft: #efe8de;
+  --cozy-border-focus: #d4915f;
+
+  /* Semantic Colors */
+  --cozy-success: #6b8f5e;
+  --cozy-success-bg: #f0f5ed;
+  --cozy-warning: #c4953f;
+  --cozy-warning-bg: #fdf5e8;
+  --cozy-error: #b85450;
+  --cozy-error-bg: #fdf0ef;
+  --cozy-info: #5e7f8f;
+  --cozy-info-bg: #edf3f5;
+
+  /* Shadows - Soft & Warm */
+  --cozy-shadow-sm:
+    0 1px 3px rgba(61, 50, 41, 0.04), 0 1px 2px rgba(61, 50, 41, 0.06);
+  --cozy-shadow:
+    0 2px 8px rgba(61, 50, 41, 0.06), 0 1px 3px rgba(61, 50, 41, 0.08);
+  --cozy-shadow-md:
+    0 4px 16px rgba(61, 50, 41, 0.07), 0 2px 6px rgba(61, 50, 41, 0.05);
+  --cozy-shadow-lg:
+    0 8px 32px rgba(61, 50, 41, 0.08), 0 4px 12px rgba(61, 50, 41, 0.04);
+  --cozy-shadow-glow:
+    0 0 0 3px var(--cozy-orange-glow), 0 0 0 1px var(--cozy-orange-soft);
+
+  /* Radii - Rounded & Soft */
+  --cozy-radius-sm: 8px;
+  --cozy-radius: 12px;
+  --cozy-radius-md: 16px;
+  --cozy-radius-lg: 20px;
+  --cozy-radius-xl: 24px;
+  --cozy-radius-full: 9999px;
+
+  /* Spacing Scale */
+  --cozy-space-xs: 4px;
+  --cozy-space-sm: 8px;
+  --cozy-space-md: 16px;
+  --cozy-space-lg: 24px;
+  --cozy-space-xl: 32px;
+  --cozy-space-2xl: 48px;
+  --cozy-space-3xl: 64px;
+
+  /* Typography */
+  --cozy-font:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
+    "Helvetica Neue", sans-serif;
+  --cozy-font-serif:
+    "Georgia", "Times New Roman", "Iowan Old Style", "Palatino Linotype",
+    serif;
+  --cozy-font-mono:
+    "SF Mono", "Cascadia Code", "Fira Code", "JetBrains Mono", "Consolas",
+    monospace;
+
+  --cozy-text-xs: 0.75rem;
+  --cozy-text-sm: 0.8125rem;
+  --cozy-text-base: 0.9375rem;
+  --cozy-text-md: 1rem;
+  --cozy-text-lg: 1.125rem;
+  --cozy-text-xl: 1.3125rem;
+  --cozy-text-2xl: 1.625rem;
+  --cozy-text-3xl: 2rem;
+  --cozy-text-4xl: 2.5rem;
+
+  --cozy-leading: 1.65;
+  --cozy-leading-tight: 1.3;
+  --cozy-leading-snug: 1.45;
+
+  /* Transitions */
+  --cozy-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --cozy-duration: 180ms;
+  --cozy-duration-slow: 300ms;
+}
+
+/* ============================================
+   Cozy North — Typography
+   ============================================ */
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--cozy-font);
+  font-size: var(--cozy-text-base);
+  line-height: var(--cozy-leading);
+  color: var(--cozy-text);
+  background-color: var(--cozy-bg);
+  letter-spacing: -0.006em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--cozy-text);
+  line-height: var(--cozy-leading-tight);
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: var(--cozy-text-4xl);
+  margin-bottom: var(--cozy-space-lg);
+}
+h2 {
+  font-size: var(--cozy-text-3xl);
+  margin-bottom: var(--cozy-space-md);
+}
+h3 {
+  font-size: var(--cozy-text-2xl);
+  margin-bottom: var(--cozy-space-md);
+}
+h4 {
+  font-size: var(--cozy-text-xl);
+  margin-bottom: var(--cozy-space-sm);
+}
+h5 {
+  font-size: var(--cozy-text-lg);
+  margin-bottom: var(--cozy-space-sm);
+}
+h6 {
+  font-size: var(--cozy-text-md);
+  margin-bottom: var(--cozy-space-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--cozy-text-soft);
+  font-weight: 500;
+}
+
+p {
+  margin-bottom: var(--cozy-space-md);
+  max-width: 68ch;
+}
+
+a {
+  color: var(--cozy-orange);
+  text-decoration: none;
+  text-underline-offset: 2px;
+  transition: color var(--cozy-duration) var(--cozy-ease);
+}
+a:hover {
+  color: var(--cozy-rust);
+  text-decoration: underline;
+}
+
+small,
+.text-sm {
+  font-size: var(--cozy-text-sm);
+}
+.text-muted {
+  color: var(--cozy-text-muted);
+}
+.text-soft {
+  color: var(--cozy-text-soft);
+}
+.text-serif {
+  font-family: var(--cozy-font-serif);
+}
+
+code,
+kbd {
+  font-family: var(--cozy-font-mono);
+  font-size: 0.875em;
+  background: var(--cozy-bg-warm);
+  padding: 2px 6px;
+  border-radius: var(--cozy-radius-sm);
+  border: 1px solid var(--cozy-border-soft);
+}
+
+pre {
+  background: var(--cozy-bg-warm);
+  border: 1px solid var(--cozy-border-soft);
+  border-radius: var(--cozy-radius);
+  padding: var(--cozy-space-md);
+  overflow-x: auto;
+  margin-bottom: var(--cozy-space-md);
+}
+pre code {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+blockquote {
+  border-left: 3px solid var(--cozy-orange-pale);
+  padding: var(--cozy-space-sm) var(--cozy-space-md);
+  margin-bottom: var(--cozy-space-md);
+  color: var(--cozy-text-soft);
+  font-style: italic;
+  background: var(--cozy-orange-glow);
+  border-radius: 0 var(--cozy-radius-sm) var(--cozy-radius-sm) 0;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: var(--cozy-border);
+  margin: var(--cozy-space-xl) 0;
+}
+
+/* ============================================
+   Cozy North — Container
+   ============================================ */
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 var(--cozy-space-lg);
+}
+.container-sm {
+  max-width: 640px;
+}
+.container-lg {
+  max-width: 1200px;
+}
+
+/* ============================================
+   Cozy North — Grid & Row
+   ============================================ */
+
+.row {
+  display: flex;
+  gap: var(--cozy-space-md);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.grid {
+  display: grid;
+  gap: var(--cozy-space-md);
+}
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/* ============================================
+   Cozy North — Stack
+   ============================================ */
+
+.stack {
+  display: flex;
+  flex-direction: column;
+}
+.stack > * + * {
+  margin-top: var(--cozy-space-md);
+}
+.stack-sm > * + * {
+  margin-top: var(--cozy-space-sm);
+}
+.stack-lg > * + * {
+  margin-top: var(--cozy-space-lg);
+}
+
+/* ============================================
+   Cozy North — Buttons
+   ============================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--cozy-space-sm);
+  font-family: var(--cozy-font);
+  font-size: var(--cozy-text-sm);
+  font-weight: 500;
+  line-height: 1;
+  padding: 10px 18px;
+  border-radius: var(--cozy-radius);
+  border: 1px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--cozy-duration) var(--cozy-ease);
+  user-select: none;
+}
+.btn:active {
+  transform: scale(0.98);
+}
+.btn:focus-visible {
+  outline: none;
+  box-shadow: var(--cozy-shadow-glow);
+}
+
+.btn-primary {
+  background: var(--cozy-orange);
+  color: #fff;
+  border-color: var(--cozy-orange);
+}
+.btn-primary:hover {
+  background: var(--cozy-rust);
+  border-color: var(--cozy-rust);
+}
+
+.btn-secondary {
+  background: var(--cozy-bg-card);
+  color: var(--cozy-text);
+  border-color: var(--cozy-border);
+}
+.btn-secondary:hover {
+  background: var(--cozy-bg-hover);
+  border-color: var(--cozy-border);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--cozy-text-soft);
+}
+.btn-ghost:hover {
+  background: var(--cozy-bg-hover);
+  color: var(--cozy-text);
+}
+
+.btn-warm {
+  background: var(--cozy-orange-pale);
+  color: var(--cozy-rust);
+  border-color: var(--cozy-orange-pale);
+}
+.btn-warm:hover {
+  background: #ebcfb4;
+}
+
+.btn-sm {
+  font-size: var(--cozy-text-xs);
+  padding: 7px 12px;
+  border-radius: var(--cozy-radius-sm);
+}
+.btn-lg {
+  font-size: var(--cozy-text-md);
+  padding: 13px 24px;
+  border-radius: var(--cozy-radius-md);
+}
+.btn-pill {
+  border-radius: var(--cozy-radius-full);
+}
+.btn-block {
+  width: 100%;
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ============================================
+   Cozy North — Cards
+   ============================================ */
+
+.card {
+  background: var(--cozy-bg-card);
+  border: 1px solid var(--cozy-border-soft);
+  border-radius: var(--cozy-radius-md);
+  padding: var(--cozy-space-lg);
+  box-shadow: var(--cozy-shadow-sm);
+  transition:
+    box-shadow var(--cozy-duration-slow) var(--cozy-ease),
+    transform var(--cozy-duration-slow) var(--cozy-ease);
+}
+.card:hover {
+  box-shadow: var(--cozy-shadow-md);
+}
+.card-interactive:hover {
+  transform: translateY(-1px);
+  cursor: pointer;
+}
+.card-warm {
+  background: var(--cozy-bg-elevated);
+  border-color: var(--cozy-border);
+}
+.card-flat {
+  box-shadow: none;
+  background: var(--cozy-bg-warm);
+}
+
+/* ============================================
+   Cozy North — Forms & Inputs
+   ============================================ */
+
+.input,
+.textarea,
+.select {
+  font-family: var(--cozy-font);
+  font-size: var(--cozy-text-base);
+  color: var(--cozy-text);
+  background: var(--cozy-bg-input);
+  border: 1px solid var(--cozy-border);
+  border-radius: var(--cozy-radius);
+  padding: 10px 14px;
+  width: 100%;
+  transition: all var(--cozy-duration) var(--cozy-ease);
+  outline: none;
+}
+.input:hover,
+.textarea:hover,
+.select:hover {
+  border-color: var(--cozy-orange-soft);
+}
+.input:focus,
+.textarea:focus,
+.select:focus {
+  border-color: var(--cozy-orange);
+  box-shadow: var(--cozy-shadow-glow);
+  background: var(--cozy-bg-card);
+}
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--cozy-text-faint);
+}
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: var(--cozy-leading);
+}
+
+.label {
+  display: block;
+  font-size: var(--cozy-text-sm);
+  font-weight: 500;
+  color: var(--cozy-text-soft);
+  margin-bottom: var(--cozy-space-xs);
+}
+
+.input-group {
+  margin-bottom: var(--cozy-space-md);
+}
+
+/* Toggle / Switch */
+.toggle {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--cozy-border);
+  border-radius: var(--cozy-radius-full);
+  cursor: pointer;
+  transition: background var(--cozy-duration) var(--cozy-ease);
+  outline: none;
+  flex-shrink: 0;
+}
+.toggle::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: var(--cozy-shadow-sm);
+  transition: transform var(--cozy-duration) var(--cozy-ease);
+}
+.toggle:checked {
+  background: var(--cozy-orange);
+}
+.toggle:checked::before {
+  transform: translateX(20px);
+}
+.toggle:focus-visible {
+  box-shadow: var(--cozy-shadow-glow);
+}
+
+/* Checkbox */
+.checkbox {
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--cozy-bg-input);
+  border: 1.5px solid var(--cozy-border);
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  transition: all var(--cozy-duration) var(--cozy-ease);
+  flex-shrink: 0;
+}
+.checkbox:checked {
+  background: var(--cozy-orange);
+  border-color: var(--cozy-orange);
+}
+.checkbox:checked::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 6.5px;
+  width: 5px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.checkbox:focus-visible {
+  box-shadow: var(--cozy-shadow-glow);
+}
+
+/* ============================================
+   Cozy North — Badges & Tags
+   ============================================ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--cozy-text-xs);
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: var(--cozy-radius-full);
+  background: var(--cozy-bg-warm);
+  color: var(--cozy-text-soft);
+  border: 1px solid var(--cozy-border-soft);
+}
+.badge-orange {
+  background: var(--cozy-orange-pale);
+  color: var(--cozy-rust);
+  border-color: transparent;
+}
+.badge-success {
+  background: var(--cozy-success-bg);
+  color: var(--cozy-success);
+  border-color: transparent;
+}
+.badge-warning {
+  background: var(--cozy-warning-bg);
+  color: var(--cozy-warning);
+  border-color: transparent;
+}
+.badge-error {
+  background: var(--cozy-error-bg);
+  color: var(--cozy-error);
+  border-color: transparent;
+}
+.badge-info {
+  background: var(--cozy-info-bg);
+  color: var(--cozy-info);
+  border-color: transparent;
+}
+
+/* ============================================
+   Cozy North — Alerts
+   ============================================ */
+
+.alert {
+  padding: var(--cozy-space-md);
+  border-radius: var(--cozy-radius);
+  border: 1px solid var(--cozy-border-soft);
+  margin-bottom: var(--cozy-space-md);
+  font-size: var(--cozy-text-sm);
+  line-height: var(--cozy-leading-snug);
+}
+.alert-info {
+  background: var(--cozy-info-bg);
+  border-color: #c8dde5;
+  color: #4a6b78;
+}
+.alert-success {
+  background: var(--cozy-success-bg);
+  border-color: #c5d9be;
+  color: #516d47;
+}
+.alert-warning {
+  background: var(--cozy-warning-bg);
+  border-color: #e8d5af;
+  color: #8a6a2d;
+}
+.alert-error {
+  background: var(--cozy-error-bg);
+  border-color: #e5c4c3;
+  color: #8a3c39;
+}
+
+/* ============================================
+   Cozy North — Table
+   ============================================ */
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: var(--cozy-text-sm);
+  border: 1px solid var(--cozy-border-soft);
+  border-radius: var(--cozy-radius);
+  overflow: hidden;
+}
+.table th {
+  background: var(--cozy-bg-warm);
+  font-weight: 500;
+  color: var(--cozy-text-soft);
+  text-align: left;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--cozy-border);
+  font-size: var(--cozy-text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.table td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--cozy-border-soft);
+}
+.table tr:last-child td {
+  border-bottom: none;
+}
+.table tr:hover td {
+  background: var(--cozy-orange-glow);
+}
+
+/* ============================================
+   Cozy North — Navbar
+   ============================================ */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--cozy-space-sm) var(--cozy-space-lg);
+  background: rgba(250, 246, 241, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--cozy-border-soft);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.navbar-brand {
+  font-weight: 600;
+  font-size: var(--cozy-text-lg);
+  color: var(--cozy-text);
+  letter-spacing: -0.02em;
+}
+.navbar-links {
+  display: flex;
+  gap: var(--cozy-space-xs);
+  list-style: none;
+}
+.navbar-links a {
+  display: block;
+  padding: 7px 14px;
+  color: var(--cozy-text-soft);
+  border-radius: var(--cozy-radius-sm);
+  font-size: var(--cozy-text-sm);
+  font-weight: 450;
+  text-decoration: none;
+  transition: all var(--cozy-duration) var(--cozy-ease);
+}
+.navbar-links a:hover {
+  background: var(--cozy-bg-hover);
+  color: var(--cozy-text);
+}
+.navbar-links a.active {
+  background: var(--cozy-orange-glow);
+  color: var(--cozy-orange);
+}
+
+/* ============================================
+   Cozy North — Sidebar
+   ============================================ */
+
+.sidebar {
+  width: 260px;
+  padding: var(--cozy-space-md);
+  background: var(--cozy-bg-warm);
+  border-right: 1px solid var(--cozy-border-soft);
+  height: 100vh;
+  overflow-y: auto;
+}
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: var(--cozy-space-sm);
+  padding: 8px 12px;
+  border-radius: var(--cozy-radius-sm);
+  color: var(--cozy-text-soft);
+  font-size: var(--cozy-text-sm);
+  cursor: pointer;
+  transition: all var(--cozy-duration) var(--cozy-ease);
+  text-decoration: none;
+}
+.sidebar-item:hover {
+  background: var(--cozy-bg-hover);
+  color: var(--cozy-text);
+  text-decoration: none;
+}
+.sidebar-item.active {
+  background: var(--cozy-orange-glow);
+  color: var(--cozy-orange);
+  font-weight: 500;
+}
+.sidebar-section {
+  font-size: var(--cozy-text-xs);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--cozy-text-muted);
+  padding: var(--cozy-space-md) 12px var(--cozy-space-xs);
+}
+
+/* ============================================
+   Cozy North — Tooltip
+   ============================================ */
+
+.tooltip {
+  position: relative;
+}
+.tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--cozy-text);
+  color: var(--cozy-bg);
+  font-size: var(--cozy-text-xs);
+  padding: 5px 10px;
+  border-radius: var(--cozy-radius-sm);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--cozy-duration) var(--cozy-ease);
+}
+.tooltip:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ============================================
+   Cozy North — Avatar
+   ============================================ */
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--cozy-radius-full);
+  background: var(--cozy-orange-pale);
+  color: var(--cozy-rust);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: var(--cozy-text-sm);
+  flex-shrink: 0;
+}
+.avatar-sm {
+  width: 28px;
+  height: 28px;
+  font-size: var(--cozy-text-xs);
+}
+.avatar-lg {
+  width: 48px;
+  height: 48px;
+  font-size: var(--cozy-text-md);
+}
+
+/* ============================================
+   Cozy North — Progress
+   ============================================ */
+
+.progress {
+  width: 100%;
+  height: 6px;
+  background: var(--cozy-border-soft);
+  border-radius: var(--cozy-radius-full);
+  overflow: hidden;
+}
+.progress-bar {
+  height: 100%;
+  background: var(--cozy-orange);
+  border-radius: var(--cozy-radius-full);
+  transition: width var(--cozy-duration-slow) var(--cozy-ease);
+}
+
+/* ============================================
+   Cozy North — Skeleton Loading
+   ============================================ */
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--cozy-bg-warm) 25%,
+    var(--cozy-bg-hover) 50%,
+    var(--cozy-bg-warm) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+  border-radius: var(--cozy-radius-sm);
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* ============================================
+   Cozy North — Chat Bubbles
+   ============================================ */
+
+.chat-bubble {
+  padding: 10px 16px;
+  border-radius: var(--cozy-radius-md);
+  font-size: var(--cozy-text-sm);
+  line-height: var(--cozy-leading);
+  max-width: 85%;
+  margin-bottom: var(--cozy-space-sm);
+}
+.chat-bubble-user {
+  background: var(--cozy-orange);
+  color: white;
+  margin-left: auto;
+  border-bottom-right-radius: var(--cozy-radius-sm);
+}
+.chat-bubble-assistant {
+  background: var(--cozy-bg-card);
+  border: 1px solid var(--cozy-border-soft);
+  border-bottom-left-radius: var(--cozy-radius-sm);
+}
+
+/* ============================================
+   Cozy North — Utility Classes
+   ============================================ */
+
+/* --- Divider with text --- */
+.divider-text {
+  display: flex;
+  align-items: center;
+  gap: var(--cozy-space-md);
+  color: var(--cozy-text-muted);
+  font-size: var(--cozy-text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: var(--cozy-space-xl) 0;
+}
+.divider-text::before,
+.divider-text::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--cozy-border);
+}
+
+/* --- Border Radius --- */
+.rounded {
+  border-radius: var(--cozy-radius);
+}
+.rounded-lg {
+  border-radius: var(--cozy-radius-lg);
+}
+.rounded-full {
+  border-radius: var(--cozy-radius-full);
+}
+
+/* --- Shadows --- */
+.shadow {
+  box-shadow: var(--cozy-shadow);
+}
+.shadow-md {
+  box-shadow: var(--cozy-shadow-md);
+}
+.shadow-lg {
+  box-shadow: var(--cozy-shadow-lg);
+}
+
+/* --- Spacing --- */
+.p-sm {
+  padding: var(--cozy-space-sm);
+}
+.p-md {
+  padding: var(--cozy-space-md);
+}
+.p-lg {
+  padding: var(--cozy-space-lg);
+}
+.p-xl {
+  padding: var(--cozy-space-xl);
+}
+.m-auto {
+  margin: auto;
+}
+
+/* --- Text --- */
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+
+/* --- Flexbox --- */
+.flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.items-center {
+  align-items: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+
+/* --- Gap --- */
+.gap-sm {
+  gap: var(--cozy-space-sm);
+}
+.gap-md {
+  gap: var(--cozy-space-md);
+}
+.gap-lg {
+  gap: var(--cozy-space-lg);
+}
+
+/* --- Sizing --- */
+.w-full {
+  width: 100%;
+}
+
+/* --- Overflow --- */
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+

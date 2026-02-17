@@ -1,0 +1,40 @@
+/* ============================================
+   Cozy North — Badges & Tags
+   ============================================ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--cozy-text-xs);
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: var(--cozy-radius-full);
+  background: var(--cozy-bg-warm);
+  color: var(--cozy-text-soft);
+  border: 1px solid var(--cozy-border-soft);
+}
+.badge-orange {
+  background: var(--cozy-orange-pale);
+  color: var(--cozy-rust);
+  border-color: transparent;
+}
+.badge-success {
+  background: var(--cozy-success-bg);
+  color: var(--cozy-success);
+  border-color: transparent;
+}
+.badge-warning {
+  background: var(--cozy-warning-bg);
+  color: var(--cozy-warning);
+  border-color: transparent;
+}
+.badge-error {
+  background: var(--cozy-error-bg);
+  color: var(--cozy-error);
+  border-color: transparent;
+}
+.badge-info {
+  background: var(--cozy-info-bg);
+  color: var(--cozy-info);
+  border-color: transparent;
+}

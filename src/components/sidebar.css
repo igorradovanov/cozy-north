@@ -1,0 +1,42 @@
+/* ============================================
+   Cozy North — Sidebar
+   ============================================ */
+
+.sidebar {
+  width: 260px;
+  padding: var(--cozy-space-md);
+  background: var(--cozy-bg-warm);
+  border-right: 1px solid var(--cozy-border-soft);
+  height: 100vh;
+  overflow-y: auto;
+}
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: var(--cozy-space-sm);
+  padding: 8px 12px;
+  border-radius: var(--cozy-radius-sm);
+  color: var(--cozy-text-soft);
+  font-size: var(--cozy-text-sm);
+  cursor: pointer;
+  transition: all var(--cozy-duration) var(--cozy-ease);
+  text-decoration: none;
+}
+.sidebar-item:hover {
+  background: var(--cozy-bg-hover);
+  color: var(--cozy-text);
+  text-decoration: none;
+}
+.sidebar-item.active {
+  background: var(--cozy-orange-glow);
+  color: var(--cozy-orange);
+  font-weight: 500;
+}
+.sidebar-section {
+  font-size: var(--cozy-text-xs);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--cozy-text-muted);
+  padding: var(--cozy-space-md) 12px var(--cozy-space-xs);
+}

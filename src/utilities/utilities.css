@@ -1,0 +1,106 @@
+/* ============================================
+   Cozy North — Utility Classes
+   ============================================ */
+
+/* --- Divider with text --- */
+.divider-text {
+  display: flex;
+  align-items: center;
+  gap: var(--cozy-space-md);
+  color: var(--cozy-text-muted);
+  font-size: var(--cozy-text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: var(--cozy-space-xl) 0;
+}
+.divider-text::before,
+.divider-text::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--cozy-border);
+}
+
+/* --- Border Radius --- */
+.rounded {
+  border-radius: var(--cozy-radius);
+}
+.rounded-lg {
+  border-radius: var(--cozy-radius-lg);
+}
+.rounded-full {
+  border-radius: var(--cozy-radius-full);
+}
+
+/* --- Shadows --- */
+.shadow {
+  box-shadow: var(--cozy-shadow);
+}
+.shadow-md {
+  box-shadow: var(--cozy-shadow-md);
+}
+.shadow-lg {
+  box-shadow: var(--cozy-shadow-lg);
+}
+
+/* --- Spacing --- */
+.p-sm {
+  padding: var(--cozy-space-sm);
+}
+.p-md {
+  padding: var(--cozy-space-md);
+}
+.p-lg {
+  padding: var(--cozy-space-lg);
+}
+.p-xl {
+  padding: var(--cozy-space-xl);
+}
+.m-auto {
+  margin: auto;
+}
+
+/* --- Text --- */
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+
+/* --- Flexbox --- */
+.flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.items-center {
+  align-items: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+
+/* --- Gap --- */
+.gap-sm {
+  gap: var(--cozy-space-sm);
+}
+.gap-md {
+  gap: var(--cozy-space-md);
+}
+.gap-lg {
+  gap: var(--cozy-space-lg);
+}
+
+/* --- Sizing --- */
+.w-full {
+  width: 100%;
+}
+
+/* --- Overflow --- */
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,0 +1,88 @@
+/* ============================================
+   Cozy North — Buttons
+   ============================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--cozy-space-sm);
+  font-family: var(--cozy-font);
+  font-size: var(--cozy-text-sm);
+  font-weight: 500;
+  line-height: 1;
+  padding: 10px 18px;
+  border-radius: var(--cozy-radius);
+  border: 1px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--cozy-duration) var(--cozy-ease);
+  user-select: none;
+}
+.btn:active {
+  transform: scale(0.98);
+}
+.btn:focus-visible {
+  outline: none;
+  box-shadow: var(--cozy-shadow-glow);
+}
+
+.btn-primary {
+  background: var(--cozy-orange);
+  color: #fff;
+  border-color: var(--cozy-orange);
+}
+.btn-primary:hover {
+  background: var(--cozy-rust);
+  border-color: var(--cozy-rust);
+}
+
+.btn-secondary {
+  background: var(--cozy-bg-card);
+  color: var(--cozy-text);
+  border-color: var(--cozy-border);
+}
+.btn-secondary:hover {
+  background: var(--cozy-bg-hover);
+  border-color: var(--cozy-border);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--cozy-text-soft);
+}
+.btn-ghost:hover {
+  background: var(--cozy-bg-hover);
+  color: var(--cozy-text);
+}
+
+.btn-warm {
+  background: var(--cozy-orange-pale);
+  color: var(--cozy-rust);
+  border-color: var(--cozy-orange-pale);
+}
+.btn-warm:hover {
+  background: #ebcfb4;
+}
+
+.btn-sm {
+  font-size: var(--cozy-text-xs);
+  padding: 7px 12px;
+  border-radius: var(--cozy-radius-sm);
+}
+.btn-lg {
+  font-size: var(--cozy-text-md);
+  padding: 13px 24px;
+  border-radius: var(--cozy-radius-md);
+}
+.btn-pill {
+  border-radius: var(--cozy-radius-full);
+}
+.btn-block {
+  width: 100%;
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
