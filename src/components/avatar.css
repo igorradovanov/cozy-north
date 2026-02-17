@@ -1,0 +1,27 @@
+/* ============================================
+   Cozy North — Avatar
+   ============================================ */
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--cozy-radius-full);
+  background: var(--cozy-orange-pale);
+  color: var(--cozy-rust);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: var(--cozy-text-sm);
+  flex-shrink: 0;
+}
+.avatar-sm {
+  width: 28px;
+  height: 28px;
+  font-size: var(--cozy-text-xs);
+}
+.avatar-lg {
+  width: 48px;
+  height: 48px;
+  font-size: var(--cozy-text-md);
+}

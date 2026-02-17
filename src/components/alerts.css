@@ -1,0 +1,32 @@
+/* ============================================
+   Cozy North — Alerts
+   ============================================ */
+
+.alert {
+  padding: var(--cozy-space-md);
+  border-radius: var(--cozy-radius);
+  border: 1px solid var(--cozy-border-soft);
+  margin-bottom: var(--cozy-space-md);
+  font-size: var(--cozy-text-sm);
+  line-height: var(--cozy-leading-snug);
+}
+.alert-info {
+  background: var(--cozy-info-bg);
+  border-color: #c8dde5;
+  color: #4a6b78;
+}
+.alert-success {
+  background: var(--cozy-success-bg);
+  border-color: #c5d9be;
+  color: #516d47;
+}
+.alert-warning {
+  background: var(--cozy-warning-bg);
+  border-color: #e8d5af;
+  color: #8a6a2d;
+}
+.alert-error {
+  background: var(--cozy-error-bg);
+  border-color: #e5c4c3;
+  color: #8a3c39;
+}

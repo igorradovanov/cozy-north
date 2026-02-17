@@ -1,0 +1,29 @@
+/* ============================================
+   Cozy North — Cards
+   ============================================ */
+
+.card {
+  background: var(--cozy-bg-card);
+  border: 1px solid var(--cozy-border-soft);
+  border-radius: var(--cozy-radius-md);
+  padding: var(--cozy-space-lg);
+  box-shadow: var(--cozy-shadow-sm);
+  transition:
+    box-shadow var(--cozy-duration-slow) var(--cozy-ease),
+    transform var(--cozy-duration-slow) var(--cozy-ease);
+}
+.card:hover {
+  box-shadow: var(--cozy-shadow-md);
+}
+.card-interactive:hover {
+  transform: translateY(-1px);
+  cursor: pointer;
+}
+.card-warm {
+  background: var(--cozy-bg-elevated);
+  border-color: var(--cozy-border);
+}
+.card-flat {
+  box-shadow: none;
+  background: var(--cozy-bg-warm);
+}

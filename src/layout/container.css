@@ -1,0 +1,16 @@
+/* ============================================
+   Cozy North — Container
+   ============================================ */
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 var(--cozy-space-lg);
+}
+.container-sm {
+  max-width: 640px;
+}
+.container-lg {
+  max-width: 1200px;
+}

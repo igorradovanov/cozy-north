@@ -1,0 +1,23 @@
+/* ============================================
+   Cozy North — Chat Bubbles
+   ============================================ */
+
+.chat-bubble {
+  padding: 10px 16px;
+  border-radius: var(--cozy-radius-md);
+  font-size: var(--cozy-text-sm);
+  line-height: var(--cozy-leading);
+  max-width: 85%;
+  margin-bottom: var(--cozy-space-sm);
+}
+.chat-bubble-igorradovanov {
+  background: var(--cozy-orange);
+  color: white;
+  margin-left: auto;
+  border-bottom-right-radius: var(--cozy-radius-sm);
+}
+.chat-bubble-assistant {
+  background: var(--cozy-bg-card);
+  border: 1px solid var(--cozy-border-soft);
+  border-bottom-left-radius: var(--cozy-radius-sm);
+}

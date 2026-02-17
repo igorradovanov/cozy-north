@@ -1,0 +1,19 @@
+# Cozy North — .gitignore
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node (only if using npm tooling)
+node_modules/
+npm-debug.log*
+
+# Build artifacts (optional — uncomment if you prefer to NOT track dist/)
+# dist/

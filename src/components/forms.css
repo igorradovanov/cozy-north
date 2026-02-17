@@ -1,0 +1,120 @@
+/* ============================================
+   Cozy North — Forms & Inputs
+   ============================================ */
+
+.input,
+.textarea,
+.select {
+  font-family: var(--cozy-font);
+  font-size: var(--cozy-text-base);
+  color: var(--cozy-text);
+  background: var(--cozy-bg-input);
+  border: 1px solid var(--cozy-border);
+  border-radius: var(--cozy-radius);
+  padding: 10px 14px;
+  width: 100%;
+  transition: all var(--cozy-duration) var(--cozy-ease);
+  outline: none;
+}
+.input:hover,
+.textarea:hover,
+.select:hover {
+  border-color: var(--cozy-orange-soft);
+}
+.input:focus,
+.textarea:focus,
+.select:focus {
+  border-color: var(--cozy-orange);
+  box-shadow: var(--cozy-shadow-glow);
+  background: var(--cozy-bg-card);
+}
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--cozy-text-faint);
+}
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: var(--cozy-leading);
+}
+
+.label {
+  display: block;
+  font-size: var(--cozy-text-sm);
+  font-weight: 500;
+  color: var(--cozy-text-soft);
+  margin-bottom: var(--cozy-space-xs);
+}
+
+.input-group {
+  margin-bottom: var(--cozy-space-md);
+}
+
+/* Toggle / Switch */
+.toggle {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--cozy-border);
+  border-radius: var(--cozy-radius-full);
+  cursor: pointer;
+  transition: background var(--cozy-duration) var(--cozy-ease);
+  outline: none;
+  flex-shrink: 0;
+}
+.toggle::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: var(--cozy-shadow-sm);
+  transition: transform var(--cozy-duration) var(--cozy-ease);
+}
+.toggle:checked {
+  background: var(--cozy-orange);
+}
+.toggle:checked::before {
+  transform: translateX(20px);
+}
+.toggle:focus-visible {
+  box-shadow: var(--cozy-shadow-glow);
+}
+
+/* Checkbox */
+.checkbox {
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--cozy-bg-input);
+  border: 1.5px solid var(--cozy-border);
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  transition: all var(--cozy-duration) var(--cozy-ease);
+  flex-shrink: 0;
+}
+.checkbox:checked {
+  background: var(--cozy-orange);
+  border-color: var(--cozy-orange);
+}
+.checkbox:checked::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 6.5px;
+  width: 5px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.checkbox:focus-visible {
+  box-shadow: var(--cozy-shadow-glow);
+}
